@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Register information at Blockchain</title>
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./node_modules/ethers/dist/ethers.umd.min.js"> </script>
+    <!-- <script src="./index.js"></script> -->
+    <script  src="./index2.js"></script>    
+    <script  src="./index3.js"></script>  
+  </head>
+
+  <body class="container">
+
+   
+
+    <h1 class="page-header">GIFT CARD</h1>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">addCurency(ERC20 Address);</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">this adds a new ERC20 token that users will be able to invest:</label> </td>
+                <td>
+                  <input class="form-control" id="numberToken">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="addCurencyJS()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div>    
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">sendTokens(pid, cardId, delayTime, amount);</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">number of the currency</label> </td>
+                <td>
+                  <input class="form-control" id="numberToken">
+                </td>      
+                <td><label for="newInfo">Card ID</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td> 
+                <td><label for="newInfo">delay</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>    
+                <td><label for="newInfo">amount</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>                                 
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="registerSetInfo()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div>    
+
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">contractBalance(number) - How much of the currency this contract has total;</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">number of the currency!!!</label> </td>
+                <td>
+                  <input class="form-control" id="pid">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="balanceJS()" class="btn btn-primary">Ok</a>
+          <td>
+            <label id="lastInfo">
+          </td>
+        </form>
+      </div>
+    </div>  
+    
+    <div class="row">
+      <div>
+        <h3 class="sub-header">createCard();  -this creates your NFT. </h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            
+          </div>
+          <a href="#" onclick="makeCard()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div> 
+    
+    <div class="row">
+      <div>
+        <h3 class="sub-header">cardInfo(Card ID); - returns balance. delay time and the number of the currency</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">card ID</label> </td>
+                <td>
+                  <input class="form-control" id="cardId">
+                </td>                          
+              </tr>
+              <td>
+                <label id="showCard">
+              </td>
+            </table>
+          </div>
+          <a href="#" onclick="infoCard()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div>  
+    
+    <div class="row">
+      <div>
+        <h3 class="sub-header">takeAll(card ID);- this sends everything from the NFT to the owner of this NFT</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">cardID</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="registerSetInfo()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div> 
+    
+    <div class="row">
+      <div>
+        <h3 class="sub-header">withdraw(currency number); - this sends whatever this contracts stores(particular currency) to Ruv</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">currency number</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="registerSetInfo()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div>
+        <h3 class="sub-header">takeSomeMoney(amount); -sends the amount of funds from the NFT to its owner</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">amount</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="registerSetInfo()" class="btn btn-primary">Ok</a>
+        </form>
+      </div>
+    </div>  
+    <!-- <script type="module">
+      import { ethers } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
+      // Your code here...
+  </script>   -->
+  </body>
+</html>
